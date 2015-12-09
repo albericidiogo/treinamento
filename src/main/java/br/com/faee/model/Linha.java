@@ -33,4 +33,18 @@ public class Linha {
 		this.valor = valor;
 	}
 
+	@Override
+	public int hashCode() {
+		return descricao.hashCode();
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (!(obj instanceof Linha)) {
+			return false;
+		}
+		Linha bean = (Linha) obj;
+		return bean.getDescricao().equals(this.getDescricao());
+	}
+
 }

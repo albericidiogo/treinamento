@@ -69,5 +69,18 @@ public class SubGrupo {
 		}
 
 	}
+	@Override
+	public int hashCode() {
+		return descricao.hashCode();
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (!(obj instanceof SubGrupo)) {
+			return false;
+		}
+		SubGrupo bean = (SubGrupo) obj;
+		return bean.getDescricao().equals(this.getDescricao());
+	}
 
 }

@@ -70,4 +70,18 @@ public class Grupo {
 		}
 
 	}
+	
+	@Override
+	public int hashCode() {
+		return descricao.hashCode();
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (!(obj instanceof Grupo)) {
+			return false;
+		}
+		Grupo bean = (Grupo) obj;
+		return bean.getDescricao().equals(this.getDescricao());
+	}
 }
